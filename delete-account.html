@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TerraVisa – Hesap Silme / Account Deletion</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: #F8FAFF;
+      color: #2E3A59;
+      line-height: 1.7;
+    }
+    header {
+      background: #2E3A59;
+      color: #fff;
+      padding: 32px 24px;
+      text-align: center;
+    }
+    header h1 { font-size: 26px; font-weight: 700; }
+    header p  { font-size: 14px; opacity: 0.75; margin-top: 6px; }
+    .lang-switch {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      padding: 14px;
+      background: #E8F0FE;
+    }
+    .lang-switch button {
+      padding: 7px 20px;
+      border: 2px solid #2E3A59;
+      border-radius: 20px;
+      background: transparent;
+      color: #2E3A59;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+    }
+    .lang-switch button.active { background: #2E3A59; color: #fff; }
+    .container { max-width: 720px; margin: 0 auto; padding: 32px 20px 64px; }
+    .card {
+      background: #fff;
+      border-radius: 14px;
+      padding: 28px 28px;
+      margin-bottom: 20px;
+      box-shadow: 0 2px 12px rgba(46,58,89,0.08);
+      border-left: 4px solid #2E3A59;
+    }
+    .card.warning { border-left-color: #E74C3C; }
+    .card.info    { border-left-color: #2471A3; }
+    h2 { font-size: 17px; font-weight: 700; margin-bottom: 12px; color: #2E3A59; }
+    p  { font-size: 15px; margin-bottom: 10px; }
+    ol, ul { padding-left: 20px; }
+    li { font-size: 15px; margin-bottom: 8px; }
+    a  { color: #2471A3; font-weight: 600; }
+    .step {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      margin-bottom: 16px;
+    }
+    .step-num {
+      min-width: 32px;
+      height: 32px;
+      background: #2E3A59;
+      color: #fff;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 15px;
+    }
+    .step-text { flex: 1; padding-top: 4px; font-size: 15px; }
+    .badge {
+      display: inline-block;
+      background: #D6EAF8;
+      color: #1A5276;
+      border-radius: 10px;
+      padding: 3px 12px;
+      font-size: 13px;
+      font-weight: 600;
+      margin-bottom: 20px;
+    }
+    .email-box {
+      background: #F0F4FF;
+      border-radius: 10px;
+      padding: 16px 20px;
+      margin-top: 12px;
+      font-size: 15px;
+    }
+    .email-box strong { display: block; margin-bottom: 4px; }
+    [lang="en"] { display: none; }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>TerraVisa</h1>
+  <p>Hesap Silme Talebi &nbsp;/&nbsp; Account Deletion Request</p>
+</header>
+
+<div class="lang-switch">
+  <button class="active" onclick="setLang('tr')">Türkçe</button>
+  <button onclick="setLang('en')">English</button>
+</div>
+
+<div class="container">
+
+  <!-- ── TURKISH ── -->
+  <div lang="tr">
+    <span class="badge">Son güncelleme: 17 Mart 2026</span>
+
+    <div class="card">
+      <h2>Hesabınızı Nasıl Silebilirsiniz?</h2>
+      <p>TerraVisa'da tüm veriler cihazınızda yerel olarak saklanır (sunucuda hesabınız bulunmaz). Hesabınızı silmek için aşağıdaki adımları izleyin:</p>
+
+      <div class="step">
+        <div class="step-num">1</div>
+        <div class="step-text">Uygulamayı açın ve <strong>Ayarlar</strong> sekmesine gidin.</div>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <div class="step-text"><strong>Hesabım</strong> bölümüne dokunun.</div>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <div class="step-text"><strong>"Hesabı Sil"</strong> seçeneğine dokunun ve onaylayın.</div>
+      </div>
+      <div class="step">
+        <div class="step-num">4</div>
+        <div class="step-text">Tüm hesap verileri, favoriler ve tercihler cihazınızdan <strong>kalıcı olarak silinir</strong>.</div>
+      </div>
+    </div>
+
+    <div class="card info">
+      <h2>Hangi Veriler Silinir?</h2>
+      <ul>
+        <li>E-posta adresi ve şifrelenmiş parola</li>
+        <li>Favoriye eklenen ülkeler</li>
+        <li>Pasaport tercihleri ve dil ayarları</li>
+        <li>Çevrimdışı önbellek verileri</li>
+        <li>Oturum bilgileri</li>
+      </ul>
+      <p style="margin-top:12px;">Tüm veriler yalnızca cihazınızda bulunduğundan, hesap silindikten sonra herhangi bir sunucudan ek silme işlemi gerekmez.</p>
+    </div>
+
+    <div class="card warning">
+      <h2>Uygulama Üzerinden Silemiyorsanız</h2>
+      <p>Uygulamaya erişiminiz yoksa veya hesap silme işlemi tamamlanmadıysa aşağıdaki adımları izleyin:</p>
+      <ul>
+        <li>Telefonunuzun <strong>Ayarlar → Uygulamalar → TerraVisa → Depolama → Verileri Temizle</strong> yolunu izleyin. Bu işlem tüm uygulama verilerini siler.</li>
+        <li>Veya e-posta ile talepte bulunun:</li>
+      </ul>
+      <div class="email-box">
+        <strong>E-posta:</strong>
+        <a href="mailto:tidemobile.contact@gmail.com">tidemobile.contact@gmail.com</a>
+        <br/>
+        <span style="font-size:13px;color:#555;">Konu: Hesap Silme Talebi — TerraVisa</span>
+      </div>
+      <p style="margin-top:12px;font-size:14px;color:#555;">E-posta talebiniz <strong>7 iş günü</strong> içinde işleme alınır.</p>
+    </div>
+
+    <div class="card">
+      <h2>Geliştirici Bilgileri</h2>
+      <p><strong>Tidemobile</strong><br/>
+      E-posta: <a href="mailto:tidemobile.contact@gmail.com">tidemobile.contact@gmail.com</a></p>
+    </div>
+  </div>
+
+  <!-- ── ENGLISH ── -->
+  <div lang="en">
+    <span class="badge">Last updated: March 17, 2026</span>
+
+    <div class="card">
+      <h2>How to Delete Your Account</h2>
+      <p>TerraVisa stores all data locally on your device — there is no server-side account. Follow these steps to delete your account:</p>
+
+      <div class="step">
+        <div class="step-num">1</div>
+        <div class="step-text">Open the app and go to the <strong>Settings</strong> tab.</div>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <div class="step-text">Tap <strong>My Account</strong>.</div>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <div class="step-text">Tap <strong>"Delete Account"</strong> and confirm.</div>
+      </div>
+      <div class="step">
+        <div class="step-num">4</div>
+        <div class="step-text">All account data, favorites, and preferences are <strong>permanently deleted</strong> from your device.</div>
+      </div>
+    </div>
+
+    <div class="card info">
+      <h2>What Data Is Deleted?</h2>
+      <ul>
+        <li>Email address and hashed password</li>
+        <li>Saved favorite countries</li>
+        <li>Passport preferences and language settings</li>
+        <li>Offline cache data</li>
+        <li>Session information</li>
+      </ul>
+      <p style="margin-top:12px;">Since all data resides only on your device, no additional server-side deletion is required after account removal.</p>
+    </div>
+
+    <div class="card warning">
+      <h2>Can't Access the App?</h2>
+      <p>If you cannot access the app or the deletion did not complete, you can:</p>
+      <ul>
+        <li>Go to your phone's <strong>Settings → Apps → TerraVisa → Storage → Clear Data</strong>. This removes all app data.</li>
+        <li>Or submit a request by email:</li>
+      </ul>
+      <div class="email-box">
+        <strong>Email:</strong>
+        <a href="mailto:tidemobile.contact@gmail.com">tidemobile.contact@gmail.com</a>
+        <br/>
+        <span style="font-size:13px;color:#555;">Subject: Account Deletion Request — TerraVisa</span>
+      </div>
+      <p style="margin-top:12px;font-size:14px;color:#555;">Email requests are processed within <strong>7 business days</strong>.</p>
+    </div>
+
+    <div class="card">
+      <h2>Developer Info</h2>
+      <p><strong>Tidemobile</strong><br/>
+      Email: <a href="mailto:tidemobile.contact@gmail.com">tidemobile.contact@gmail.com</a></p>
+    </div>
+  </div>
+
+</div>
+
+<script>
+  function setLang(lang) {
+    document.querySelectorAll('[lang]').forEach(el => {
+      el.style.display = el.getAttribute('lang') === lang ? 'block' : 'none';
+    });
+    document.querySelectorAll('.lang-switch button').forEach((btn, i) => {
+      btn.classList.toggle('active', (i === 0 && lang === 'tr') || (i === 1 && lang === 'en'));
+    });
+  }
+</script>
+
+</body>
+</html>
