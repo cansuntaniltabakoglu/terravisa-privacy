@@ -3,623 +3,264 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="TerraVisa — 190'dan fazla ülke için anlık vize bilgisi ve seyahat rehberi." />
-  <title>TerraVisa — Dünyanın Kapıları Cebinizde</title>
+  <title>TerraVisa – Gizlilik Politikası / Privacy Policy</title>
   <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-    :root {
-      --navy: #1A2A45;
-      --navy2: #2E3A59;
-      --blue: #5DADE2;
-      --blue2: #2E86C1;
-      --gold: #F39C12;
-      --bg: #F8FAFF;
-      --white: #ffffff;
-      --text: #2E3A59;
-      --muted: #6B7A99;
-    }
-
-    html { scroll-behavior: smooth; }
-
+    * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
       font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      line-height: 1.6;
+      background: #F8FAFF;
+      color: #2E3A59;
+      line-height: 1.7;
     }
-
-    /* ── NAV ── */
-    nav {
-      position: fixed;
-      top: 0; left: 0; right: 0;
-      z-index: 100;
-      background: rgba(26,42,69,0.95);
-      backdrop-filter: blur(10px);
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 0 5%;
-      height: 64px;
-    }
-    .nav-logo {
-      font-size: 22px;
-      font-weight: 800;
-      color: var(--white);
-      letter-spacing: -0.5px;
-    }
-    .nav-logo span { color: var(--blue); }
-    .nav-links {
-      display: flex;
-      gap: 28px;
-      list-style: none;
-    }
-    .nav-links a {
-      color: rgba(255,255,255,0.75);
-      text-decoration: none;
-      font-size: 14px;
-      font-weight: 500;
-      transition: color .2s;
-    }
-    .nav-links a:hover { color: var(--white); }
-
-    /* ── HERO ── */
-    .hero {
-      min-height: 100vh;
-      background: linear-gradient(135deg, #0D1B2E 0%, #1E2D45 55%, #162540 100%);
-      display: flex;
-      align-items: center;
-      justify-content: center;
+    header {
+      background: #2E3A59;
+      color: #fff;
+      padding: 32px 24px;
       text-align: center;
-      padding: 100px 24px 60px;
-      position: relative;
-      overflow: hidden;
     }
-    .hero::before {
-      content: '';
-      position: absolute;
-      width: 600px; height: 600px;
-      border-radius: 50%;
-      background: radial-gradient(circle, rgba(93,173,226,0.08) 0%, transparent 70%);
-      top: 50%; left: 50%;
-      transform: translate(-50%, -50%);
+    header h1 { font-size: 28px; font-weight: 700; }
+    header p  { font-size: 14px; opacity: 0.75; margin-top: 6px; }
+    .lang-switch {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      padding: 16px;
+      background: #E8F0FE;
     }
-    /* Globe rings */
-    .globe-ring {
-      position: absolute;
-      border-radius: 50%;
-      border: 1px solid rgba(93,173,226,0.12);
-      top: 50%; left: 50%;
-      transform: translate(-50%, -50%);
-      pointer-events: none;
-    }
-    .hero-content { position: relative; z-index: 2; max-width: 680px; }
-    .hero-badge {
-      display: inline-block;
-      background: rgba(93,173,226,0.15);
-      border: 1px solid rgba(93,173,226,0.3);
-      color: var(--blue);
+    .lang-switch button {
+      padding: 8px 22px;
+      border: 2px solid #2E3A59;
       border-radius: 20px;
-      padding: 6px 18px;
+      background: transparent;
+      color: #2E3A59;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all .2s;
+    }
+    .lang-switch button.active {
+      background: #2E3A59;
+      color: #fff;
+    }
+    .container { max-width: 780px; margin: 0 auto; padding: 32px 20px 64px; }
+    section { margin-bottom: 32px; }
+    h2 {
+      font-size: 18px;
+      font-weight: 700;
+      color: #2E3A59;
+      margin-bottom: 10px;
+      padding-bottom: 6px;
+      border-bottom: 2px solid #D6EAF8;
+    }
+    p  { margin-bottom: 10px; font-size: 15px; }
+    ul { padding-left: 20px; margin-bottom: 10px; }
+    li { margin-bottom: 6px; font-size: 15px; }
+    a  { color: #2471A3; }
+    .date-badge {
+      display: inline-block;
+      background: #D6EAF8;
+      color: #1A5276;
+      border-radius: 12px;
+      padding: 4px 14px;
       font-size: 13px;
       font-weight: 600;
       margin-bottom: 24px;
-      letter-spacing: 0.5px;
     }
-    .hero h1 {
-      font-size: clamp(42px, 7vw, 72px);
-      font-weight: 900;
-      color: var(--white);
-      letter-spacing: -2px;
-      line-height: 1.05;
-      margin-bottom: 8px;
-    }
-    .hero h1 .accent { color: var(--blue); }
-    .hero-sub {
-      font-size: clamp(16px, 2.5vw, 20px);
-      color: rgba(255,255,255,0.6);
-      margin: 20px auto 40px;
-      max-width: 520px;
-    }
-    .hero-btns {
-      display: flex;
-      gap: 14px;
-      justify-content: center;
-      flex-wrap: wrap;
-    }
-    .btn-primary {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      background: var(--blue2);
-      color: var(--white);
-      padding: 15px 32px;
-      border-radius: 14px;
-      font-size: 16px;
-      font-weight: 700;
-      text-decoration: none;
-      transition: all .2s;
-      border: none;
-      cursor: pointer;
-    }
-    .btn-primary:hover { background: #2471A3; transform: translateY(-2px); }
-    .btn-secondary {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      background: rgba(255,255,255,0.08);
-      color: var(--white);
-      padding: 15px 32px;
-      border-radius: 14px;
-      font-size: 16px;
-      font-weight: 600;
-      text-decoration: none;
-      border: 1px solid rgba(255,255,255,0.15);
-      transition: all .2s;
-    }
-    .btn-secondary:hover { background: rgba(255,255,255,0.13); transform: translateY(-2px); }
-    .hero-stats {
-      display: flex;
-      gap: 40px;
-      justify-content: center;
-      margin-top: 56px;
-      flex-wrap: wrap;
-    }
-    .stat { text-align: center; }
-    .stat-num {
-      font-size: 32px;
-      font-weight: 800;
-      color: var(--white);
-    }
-    .stat-num span { color: var(--gold); }
-    .stat-label {
-      font-size: 13px;
-      color: rgba(255,255,255,0.5);
-      margin-top: 2px;
-    }
-
-    /* ── FEATURES ── */
-    .section {
-      padding: 90px 5%;
-    }
-    .section-label {
-      text-align: center;
-      font-size: 13px;
-      font-weight: 700;
-      color: var(--blue2);
-      letter-spacing: 2px;
-      margin-bottom: 12px;
-    }
-    .section-title {
-      text-align: center;
-      font-size: clamp(28px, 4vw, 42px);
-      font-weight: 800;
-      color: var(--navy2);
-      letter-spacing: -1px;
-      margin-bottom: 16px;
-    }
-    .section-sub {
-      text-align: center;
-      color: var(--muted);
-      font-size: 17px;
-      max-width: 520px;
-      margin: 0 auto 56px;
-    }
-    .features-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 20px;
-      max-width: 1100px;
-      margin: 0 auto;
-    }
-    .feature-card {
-      background: var(--white);
-      border-radius: 20px;
-      padding: 32px 28px;
-      box-shadow: 0 4px 24px rgba(46,58,89,0.07);
-      border: 1px solid rgba(46,58,89,0.06);
-      transition: transform .2s, box-shadow .2s;
-    }
-    .feature-card:hover { transform: translateY(-4px); box-shadow: 0 8px 32px rgba(46,58,89,0.12); }
-    .feature-icon {
-      font-size: 36px;
-      margin-bottom: 16px;
-      display: block;
-    }
-    .feature-title {
-      font-size: 18px;
-      font-weight: 700;
-      color: var(--navy2);
-      margin-bottom: 8px;
-    }
-    .feature-desc {
-      font-size: 15px;
-      color: var(--muted);
-      line-height: 1.6;
-    }
-
-    /* ── HOW IT WORKS ── */
-    .how-section {
-      background: linear-gradient(135deg, #0D1B2E, #1E2D45);
-      padding: 90px 5%;
-    }
-    .how-section .section-label { color: var(--blue); }
-    .how-section .section-title { color: var(--white); }
-    .how-section .section-sub { color: rgba(255,255,255,0.55); }
-    .steps {
-      display: flex;
-      gap: 0;
-      max-width: 900px;
-      margin: 0 auto;
-      flex-wrap: wrap;
-      justify-content: center;
-    }
-    .step-item {
-      flex: 1;
-      min-width: 200px;
-      text-align: center;
-      padding: 24px 20px;
-      position: relative;
-    }
-    .step-item:not(:last-child)::after {
-      content: '→';
-      position: absolute;
-      right: -12px;
-      top: 50%;
-      transform: translateY(-50%);
-      color: rgba(93,173,226,0.4);
-      font-size: 24px;
-    }
-    .step-num-circle {
-      width: 56px; height: 56px;
-      border-radius: 50%;
-      background: rgba(93,173,226,0.15);
-      border: 2px solid rgba(93,173,226,0.3);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 22px;
-      font-weight: 800;
-      color: var(--blue);
-      margin: 0 auto 16px;
-    }
-    .step-title {
-      font-size: 16px;
-      font-weight: 700;
-      color: var(--white);
-      margin-bottom: 6px;
-    }
-    .step-desc {
-      font-size: 13px;
-      color: rgba(255,255,255,0.5);
-    }
-
-    /* ── PREMIUM ── */
-    .premium-section {
-      padding: 90px 5%;
-      background: var(--bg);
-    }
-    .premium-card {
-      max-width: 860px;
-      margin: 0 auto;
-      background: linear-gradient(135deg, var(--navy) 0%, var(--navy2) 100%);
-      border-radius: 28px;
-      padding: 56px 48px;
-      display: flex;
-      align-items: center;
-      gap: 48px;
-      flex-wrap: wrap;
-    }
-    .premium-left { flex: 1; min-width: 260px; }
-    .premium-badge {
-      display: inline-block;
-      background: var(--gold);
-      color: var(--navy);
-      border-radius: 10px;
-      padding: 4px 14px;
-      font-size: 12px;
-      font-weight: 800;
-      letter-spacing: 1px;
-      margin-bottom: 16px;
-    }
-    .premium-title {
-      font-size: 32px;
-      font-weight: 900;
-      color: var(--white);
-      margin-bottom: 12px;
-    }
-    .premium-desc {
-      color: rgba(255,255,255,0.6);
-      font-size: 15px;
-      margin-bottom: 28px;
-    }
-    .premium-features {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-    }
-    .premium-features li {
-      color: rgba(255,255,255,0.8);
-      font-size: 14px;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-    .premium-features li::before {
-      content: '✓';
-      color: var(--blue);
-      font-weight: 700;
-      font-size: 16px;
-    }
-    .premium-right {
-      flex: 0 0 auto;
-      text-align: center;
-    }
-    .price-box {
-      background: rgba(255,255,255,0.07);
-      border: 1px solid rgba(255,255,255,0.12);
-      border-radius: 20px;
-      padding: 28px 36px;
-    }
-    .price-trial {
-      font-size: 13px;
-      color: var(--blue);
-      font-weight: 700;
-      margin-bottom: 8px;
-      letter-spacing: 0.5px;
-    }
-    .price-main {
-      font-size: 42px;
-      font-weight: 900;
-      color: var(--white);
-      line-height: 1;
-    }
-    .price-period {
-      font-size: 14px;
-      color: rgba(255,255,255,0.5);
-      margin-top: 4px;
-    }
-    .price-note {
-      font-size: 12px;
-      color: rgba(255,255,255,0.4);
-      margin-top: 12px;
-    }
-
-    /* ── FOOTER ── */
-    footer {
-      background: var(--navy);
-      color: rgba(255,255,255,0.6);
-      padding: 48px 5% 32px;
-    }
-    .footer-top {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-      flex-wrap: wrap;
-      gap: 32px;
-      padding-bottom: 32px;
-      border-bottom: 1px solid rgba(255,255,255,0.08);
-    }
-    .footer-brand .nav-logo { font-size: 24px; }
-    .footer-brand p {
-      font-size: 14px;
-      color: rgba(255,255,255,0.45);
-      margin-top: 8px;
-      max-width: 260px;
-    }
-    .footer-links h4 {
-      font-size: 13px;
-      font-weight: 700;
-      color: rgba(255,255,255,0.8);
-      letter-spacing: 1px;
-      margin-bottom: 14px;
-    }
-    .footer-links ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
-    .footer-links a {
-      color: rgba(255,255,255,0.5);
-      text-decoration: none;
-      font-size: 14px;
-      transition: color .2s;
-    }
-    .footer-links a:hover { color: var(--white); }
-    .footer-bottom {
-      padding-top: 24px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 12px;
-      font-size: 13px;
-    }
-
-    @media (max-width: 600px) {
-      .step-item:not(:last-child)::after { display: none; }
-      .premium-card { padding: 36px 24px; }
-      .nav-links { display: none; }
-    }
+    [lang="en"] { display: none; }
   </style>
 </head>
 <body>
 
-<!-- NAV -->
-<nav>
-  <div class="nav-logo">Terra<span>Visa</span></div>
-  <ul class="nav-links">
-    <li><a href="#features">Özellikler</a></li>
-    <li><a href="#how">Nasıl Çalışır</a></li>
-    <li><a href="#premium">Premium</a></li>
-    <li><a href="privacy-policy.html">Gizlilik</a></li>
-  </ul>
-</nav>
+<header>
+  <h1>TerraVisa</h1>
+  <p>Gizlilik Politikası &nbsp;/&nbsp; Privacy Policy</p>
+</header>
 
-<!-- HERO -->
-<section class="hero">
-  <div class="globe-ring" style="width:500px;height:500px;"></div>
-  <div class="globe-ring" style="width:700px;height:700px;opacity:0.6;"></div>
-  <div class="globe-ring" style="width:900px;height:900px;opacity:0.3;"></div>
+<div class="lang-switch">
+  <button class="active" onclick="setLang('tr')">Türkçe</button>
+  <button onclick="setLang('en')">English</button>
+</div>
 
-  <div class="hero-content">
-    <div class="hero-badge">✈️ &nbsp;Seyahat Vize Rehberi</div>
-    <h1>Terra<span class="accent">Visa</span></h1>
-    <p class="hero-sub">Dünyanın kapıları cebinizde. 190'dan fazla ülke için anlık vize bilgisi, seyahat uyarıları ve çok daha fazlası.</p>
-    <div class="hero-btns">
-      <a href="#" class="btn-primary">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.7 9.05 7.4c1.37.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.39-1.32 2.76-2.53 3.99zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z"/></svg>
-        App Store'da İndir
-      </a>
-      <a href="#" class="btn-secondary">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M3.18 23.76c.37.2.8.2 1.19-.02l12.64-7.3-2.9-2.9-10.93 10.22zM.5 1.4C.19 1.81 0 2.37 0 3.09v17.82c0 .72.19 1.28.5 1.69l.09.08 9.98-9.98v-.24L.59 1.32.5 1.4zM20.37 10.2l-2.77-1.6-3.16 3.16 3.16 3.16 2.79-1.61c.8-.46.8-1.2.01-1.66l-.03-.01-.03-.01 .03.06-.03-.06 .03.06zM4.37.24L17.01 7.54l-2.9 2.9L4.37.24z"/></svg>
-        Google Play'de İndir
-      </a>
-    </div>
-    <div class="hero-stats">
-      <div class="stat">
-        <div class="stat-num">190<span>+</span></div>
-        <div class="stat-label">Ülke</div>
-      </div>
-      <div class="stat">
-        <div class="stat-num">7<span>gün</span></div>
-        <div class="stat-label">Ücretsiz Deneme</div>
-      </div>
-      <div class="stat">
-        <div class="stat-num">Canlı</div>
-        <div class="stat-label">Vize Verisi</div>
-      </div>
-    </div>
-  </div>
-</section>
+<div class="container">
 
-<!-- FEATURES -->
-<section class="section" id="features">
-  <div class="section-label">ÖZELLİKLER</div>
-  <h2 class="section-title">İhtiyacınız olan her şey</h2>
-  <p class="section-sub">Seyahat planlarken bilmeniz gereken her şeyi tek uygulamada toplayın.</p>
-  <div class="features-grid">
-    <div class="feature-card">
-      <span class="feature-icon">🌍</span>
-      <div class="feature-title">İnteraktif Dünya Haritası</div>
-      <div class="feature-desc">Renk kodlu harita ile vizesiz, kapıda vize ve vize gerektiren ülkelere tek bakışta ulaşın.</div>
-    </div>
-    <div class="feature-card">
-      <span class="feature-icon">✈️</span>
-      <div class="feature-title">Anlık Vize Bilgisi</div>
-      <div class="feature-desc">Pasaportunuza göre kişiselleştirilmiş vize gereksinimleri, kalış süreleri ve başvuru adımları.</div>
-    </div>
-    <div class="feature-card">
-      <span class="feature-icon">🛡️</span>
-      <div class="feature-title">Seyahat Güvenlik Uyarıları</div>
-      <div class="feature-desc">Uluslararası seyahat danışmanlık verilerinden beslenen canlı güvenlik ve risk seviyeleri.</div>
-    </div>
-    <div class="feature-card">
-      <span class="feature-icon">⭐</span>
-      <div class="feature-title">Favoriler</div>
-      <div class="feature-desc">Sık seyahat ettiğiniz veya planladığınız ülkeleri kaydedin, hızlıca erişin.</div>
-    </div>
-    <div class="feature-card">
-      <span class="feature-icon">📶</span>
-      <div class="feature-title">Offline Mod</div>
-      <div class="feature-desc">İnternet bağlantısı olmadan da ülke bilgilerine erişin. Uçuş modunda bile çalışır.</div>
-    </div>
-    <div class="feature-card">
-      <span class="feature-icon">🔔</span>
-      <div class="feature-title">Push Bildirimler</div>
-      <div class="feature-desc">Vize kuralları veya güvenlik durumu değiştiğinde anında haberdar olun.</div>
-    </div>
-  </div>
-</section>
+  <!-- ── TURKISH ── -->
+  <div lang="tr">
+    <span class="date-badge">Son güncelleme: 17 Mart 2026</span>
 
-<!-- HOW IT WORKS -->
-<section class="how-section" id="how">
-  <div class="section-label">NASIL ÇALIŞIR</div>
-  <h2 class="section-title">3 adımda başlayın</h2>
-  <p class="section-sub" style="color:rgba(255,255,255,0.5)">Dakikalar içinde seyahat planlamanızı güçlendirin.</p>
-  <div class="steps">
-    <div class="step-item">
-      <div class="step-num-circle">1</div>
-      <div class="step-title">Pasaportunuzu Seçin</div>
-      <div class="step-desc">Hangi ülke vatandaşı olduğunuzu belirtin.</div>
-    </div>
-    <div class="step-item">
-      <div class="step-num-circle">2</div>
-      <div class="step-title">Ülkeyi Arayın</div>
-      <div class="step-desc">Gitmek istediğiniz ülkeyi arayın veya haritadan seçin.</div>
-    </div>
-    <div class="step-item">
-      <div class="step-num-circle">3</div>
-      <div class="step-title">Bilgiye Ulaşın</div>
-      <div class="step-desc">Vize durumu, risk seviyesi ve başvuru adımları karşınızda.</div>
-    </div>
-  </div>
-</section>
+    <section>
+      <h2>1. Giriş</h2>
+      <p>TerraVisa ("uygulama", "biz"), Tidemobile tarafından geliştirilmektedir. Bu Gizlilik Politikası, uygulamayı kullandığınızda hangi kişisel verilerin toplandığını, nasıl kullanıldığını ve haklarınızı açıklar. Uygulamayı kullanarak bu politikayı kabul etmiş sayılırsınız.</p>
+    </section>
 
-<!-- PREMIUM -->
-<section class="premium-section" id="premium">
-  <div class="section-label">PREMİUM</div>
-  <h2 class="section-title">Sınırları kaldırın</h2>
-  <p class="section-sub">7 gün ücretsiz deneyin. Kredi kartı gerekmez.</p>
-  <div class="premium-card">
-    <div class="premium-left">
-      <div class="premium-badge">👑 PREMİUM</div>
-      <div class="premium-title">TerraVisa Premium</div>
-      <div class="premium-desc">Seyahat planlamanızı bir üst seviyeye taşıyın.</div>
-      <ul class="premium-features">
-        <li>Sınırsız ülke görüntüleme</li>
-        <li>Adım adım vize rehberi</li>
-        <li>Detaylı risk & güvenlik analizi</li>
-        <li>Push bildirimler</li>
-        <li>Offline erişim</li>
-        <li>Reklamsız deneyim</li>
-      </ul>
-    </div>
-    <div class="premium-right">
-      <div class="price-box">
-        <div class="price-trial">7 GÜN ÜCRETSİZ</div>
-        <div class="price-main">₺49<span style="font-size:22px;opacity:0.7">,99</span></div>
-        <div class="price-period">aylık</div>
-        <div style="margin:16px 0;font-size:13px;color:rgba(255,255,255,0.4)">veya</div>
-        <div style="font-size:26px;font-weight:800;color:#fff;">₺299<span style="font-size:16px;opacity:0.7">,99</span></div>
-        <div class="price-period">yıllık · %50 indirim</div>
-        <div class="price-note">Kredi kartı gerekmez</div>
-      </div>
-    </div>
-  </div>
-</section>
+    <section>
+      <h2>2. Toplanan Veriler</h2>
+      <h3 style="font-size:15px;margin:10px 0 6px;">2.1 Konum Verisi</h3>
+      <p>Uygulama, harita üzerindeki konumunuzu göstermek amacıyla <strong>yalnızca uygulama açıkken</strong> konum bilgisi ister. Konum veriniz sunucularımıza gönderilmez; yalnızca cihazınızda işlenir.</p>
 
-<!-- FOOTER -->
-<footer>
-  <div class="footer-top">
-    <div class="footer-brand">
-      <div class="nav-logo">Terra<span>Visa</span></div>
-      <p>Dünyanın kapıları cebinizde. Tidemobile tarafından geliştirilmiştir.</p>
-    </div>
-    <div class="footer-links">
-      <h4>UYGULAMA</h4>
+      <h3 style="font-size:15px;margin:10px 0 6px;">2.2 Cihaz ve Reklam Tanımlayıcıları</h3>
+      <p>Ücretsiz kullanıcılara reklam göstermek için Google AdMob entegrasyonumuz, reklam kimliği (IDFA/GAID) gibi reklam tanımlayıcılarını toplayabilir. Bu veriler yalnızca reklam hedefleme amacıyla Google'ın gizlilik politikası kapsamında işlenir.</p>
+
+      <h3 style="font-size:15px;margin:10px 0 6px;">2.3 Satın Alma ve Abonelik Verileri</h3>
+      <p>Premium abonelik işlemleri RevenueCat üzerinden yönetilir. Ödeme bilgileriniz (kart numarası vb.) uygulamamıza iletilmez; doğrudan App Store / Google Play tarafından işlenir.</p>
+
+      <h3 style="font-size:15px;margin:10px 0 6px;">2.4 Uygulama İçi Tercihler</h3>
+      <p>Pasaport seçimi, favoriler, dil tercihi ve çevrimdışı önbellek gibi veriler <strong>yalnızca cihazınızda</strong> (AsyncStorage) saklanır ve sunucularımıza gönderilmez.</p>
+    </section>
+
+    <section>
+      <h2>3. Verilerin Kullanım Amacı</h2>
       <ul>
-        <li><a href="#features">Özellikler</a></li>
-        <li><a href="#premium">Premium</a></li>
-        <li><a href="#how">Nasıl Çalışır</a></li>
+        <li>Vize bilgilerini ve seyahat uyarılarını kişiselleştirerek göstermek</li>
+        <li>Harita üzerinde konumunuzu işaretlemek</li>
+        <li>Ücretsiz kullanıcılara alakalı reklamlar sunmak (Google AdMob)</li>
+        <li>Abonelik ve satın alma durumunu doğrulamak (RevenueCat)</li>
+        <li>Tercihlerinizi ve favorilerinizi cihazınızda hatırlamak</li>
       </ul>
-    </div>
-    <div class="footer-links">
-      <h4>YASAL</h4>
+    </section>
+
+    <section>
+      <h2>4. Üçüncü Taraf Hizmetler</h2>
+      <p>Uygulama aşağıdaki üçüncü taraf hizmetleri kullanmaktadır:</p>
       <ul>
-        <li><a href="privacy-policy.html">Gizlilik Politikası</a></li>
-        <li><a href="delete-account.html">Hesap Silme</a></li>
+        <li><strong>Google AdMob</strong> – Reklam gösterimi. <a href="https://policies.google.com/privacy" target="_blank">Google Gizlilik Politikası</a></li>
+        <li><strong>RevenueCat</strong> – Abonelik yönetimi. <a href="https://www.revenuecat.com/privacy" target="_blank">RevenueCat Gizlilik Politikası</a></li>
+        <li><strong>REST Countries API</strong> – Ülke verileri (anonim, kişisel veri içermez)</li>
+        <li><strong>Travel Advisory API</strong> – Seyahat uyarı verileri (anonim, kişisel veri içermez)</li>
+        <li><strong>Google Maps</strong> – Harita görünümü. <a href="https://policies.google.com/privacy" target="_blank">Google Gizlilik Politikası</a></li>
       </ul>
-    </div>
-    <div class="footer-links">
-      <h4>İLETİŞİM</h4>
+    </section>
+
+    <section>
+      <h2>5. Veri Saklama</h2>
+      <p>Sunucularımızda kişisel veri saklamıyoruz. Cihazınızdaki veriler, uygulamayı kaldırdığınızda otomatik olarak silinir. Reklam ve abonelik verileri ilgili üçüncü tarafların politikalarına göre saklanır.</p>
+    </section>
+
+    <section>
+      <h2>6. Çocukların Gizliliği</h2>
+      <p>TerraVisa, 13 yaşın altındaki çocuklara yönelik değildir ve bu kişilerden bilerek kişisel veri toplamıyoruz. 13 yaşın altında bir çocuğa ait veri topladığımızı fark edersek derhal sileriz.</p>
+    </section>
+
+    <section>
+      <h2>7. Haklarınız</h2>
+      <p>KVKK ve GDPR kapsamında aşağıdaki haklara sahipsiniz:</p>
       <ul>
-        <li><a href="mailto:tidemobile.contact@gmail.com">tidemobile.contact@gmail.com</a></li>
+        <li>Verilerinize erişim ve kopyasını talep etme</li>
+        <li>Yanlış verilerin düzeltilmesini isteme</li>
+        <li>Verilerinizin silinmesini talep etme</li>
+        <li>Reklam kişiselleştirmesine itiraz etme</li>
       </ul>
-    </div>
+      <p>Bu haklarınızı kullanmak için <a href="mailto:tidemobile.contact@gmail.com">tidemobile.contact@gmail.com</a> adresine yazabilirsiniz.</p>
+    </section>
+
+    <section>
+      <h2>8. İletişim</h2>
+      <p>Gizlilik politikamızla ilgili sorularınız için:<br>
+        <strong>Tidemobile</strong><br>
+        E-posta: <a href="mailto:tidemobile.contact@gmail.com">tidemobile.contact@gmail.com</a>
+      </p>
+    </section>
+
+    <section>
+      <h2>9. Politika Değişiklikleri</h2>
+      <p>Bu politikayı zaman zaman güncelleyebiliriz. Önemli değişiklikler uygulama içi bildirim ile duyurulur. Güncel politika her zaman bu sayfada yer alır.</p>
+    </section>
   </div>
-  <div class="footer-bottom">
-    <span>© 2026 Tidemobile. Tüm hakları saklıdır.</span>
-    <span>TerraVisa v1.0</span>
+
+  <!-- ── ENGLISH ── -->
+  <div lang="en">
+    <span class="date-badge">Last updated: March 17, 2026</span>
+
+    <section>
+      <h2>1. Introduction</h2>
+      <p>TerraVisa ("app", "we") is developed by Tidemobile. This Privacy Policy explains what personal data is collected when you use the app, how it is used, and your rights. By using the app, you agree to this policy.</p>
+    </section>
+
+    <section>
+      <h2>2. Data Collected</h2>
+      <h3 style="font-size:15px;margin:10px 0 6px;">2.1 Location Data</h3>
+      <p>The app requests location access <strong>only while in use</strong> to display your position on the map. Your location is processed on-device only and is never sent to our servers.</p>
+
+      <h3 style="font-size:15px;margin:10px 0 6px;">2.2 Device and Advertising Identifiers</h3>
+      <p>Our Google AdMob integration may collect advertising identifiers (IDFA/GAID) to show relevant ads to free-tier users. This data is processed solely for ad targeting under Google's privacy policy.</p>
+
+      <h3 style="font-size:15px;margin:10px 0 6px;">2.3 Purchase and Subscription Data</h3>
+      <p>Premium subscriptions are managed through RevenueCat. Payment details (card numbers, etc.) are never transmitted to us — they are handled directly by the App Store / Google Play.</p>
+
+      <h3 style="font-size:15px;margin:10px 0 6px;">2.4 In-App Preferences</h3>
+      <p>Passport selection, favorites, language preference, and offline cache are stored <strong>on your device only</strong> (AsyncStorage) and are never sent to our servers.</p>
+    </section>
+
+    <section>
+      <h2>3. How We Use Your Data</h2>
+      <ul>
+        <li>To display personalized visa information and travel advisories</li>
+        <li>To show your location on the map</li>
+        <li>To serve relevant ads to free-tier users (Google AdMob)</li>
+        <li>To verify subscription and purchase status (RevenueCat)</li>
+        <li>To remember your preferences and favorites on-device</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>4. Third-Party Services</h2>
+      <p>The app uses the following third-party services:</p>
+      <ul>
+        <li><strong>Google AdMob</strong> – Ad delivery. <a href="https://policies.google.com/privacy" target="_blank">Google Privacy Policy</a></li>
+        <li><strong>RevenueCat</strong> – Subscription management. <a href="https://www.revenuecat.com/privacy" target="_blank">RevenueCat Privacy Policy</a></li>
+        <li><strong>REST Countries API</strong> – Country data (anonymous, no personal data)</li>
+        <li><strong>Travel Advisory API</strong> – Travel warning data (anonymous, no personal data)</li>
+        <li><strong>Google Maps</strong> – Map rendering. <a href="https://policies.google.com/privacy" target="_blank">Google Privacy Policy</a></li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>5. Data Retention</h2>
+      <p>We do not store personal data on our servers. Data on your device is automatically deleted when you uninstall the app. Ad and subscription data is retained per the respective third parties' policies.</p>
+    </section>
+
+    <section>
+      <h2>6. Children's Privacy</h2>
+      <p>TerraVisa is not directed at children under 13 and we do not knowingly collect personal data from them. If we discover that a child under 13 has provided data, we will delete it immediately.</p>
+    </section>
+
+    <section>
+      <h2>7. Your Rights</h2>
+      <p>Under GDPR and applicable laws, you have the right to:</p>
+      <ul>
+        <li>Access your data and request a copy</li>
+        <li>Request correction of inaccurate data</li>
+        <li>Request deletion of your data</li>
+        <li>Object to personalized advertising</li>
+      </ul>
+      <p>To exercise these rights, contact us at <a href="mailto:tidemobile.contact@gmail.com">tidemobile.contact@gmail.com</a>.</p>
+    </section>
+
+    <section>
+      <h2>8. Contact</h2>
+      <p>For privacy-related questions:<br>
+        <strong>Tidemobile</strong><br>
+        Email: <a href="mailto:tidemobile.contact@gmail.com">tidemobile.contact@gmail.com</a>
+      </p>
+    </section>
+
+    <section>
+      <h2>9. Policy Changes</h2>
+      <p>We may update this policy from time to time. Material changes will be announced via in-app notification. The current version is always available on this page.</p>
+    </section>
   </div>
-</footer>
+
+</div>
+
+<script>
+  function setLang(lang) {
+    document.querySelectorAll('[lang]').forEach(el => {
+      el.style.display = el.getAttribute('lang') === lang ? 'block' : 'none';
+    });
+    document.querySelectorAll('.lang-switch button').forEach((btn, i) => {
+      btn.classList.toggle('active', (i === 0 && lang === 'tr') || (i === 1 && lang === 'en'));
+    });
+  }
+</script>
 
 </body>
 </html>
